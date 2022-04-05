@@ -1,0 +1,186 @@
+{
+    "AWSTemplateFormatVersion" : "2010-09-09",
+    "Description": "Here are some details about the template.",
+
+    "Parameters": {
+        "InstanceTypeParameter": {
+            "Type": "String",
+            "Default": "t2.micro",
+            "AllowedValues": ["t2.micro","t2.small"],
+            "Description": "Enter the instnace type (t2.micro or t2.small)."
+        },
+        "KeyPair": {
+            "Type": "String",
+            "Description": "Enter your KeyPair here"
+        },
+
+        "YourIp": {
+            "Type": "String",
+            "Description": "Enter your IP Address here (IPv4)"
+        }
+    },
+
+    "Resources": {
+        "EngineeringVPC": {
+            "Type" : "AWS::EC2::VPC",
+            "Properties": {
+                "CidrBlock": "10.0.0.0/18",
+                "EnableDnsSupport": "true",
+                "EnableDnsHostnames": "true"
+            }
+        },
+        "myInternetGateway" : {
+            "Type" : "AWS::EC2::InternetGateway",
+            "Properties" : {
+              "Tags" : [ {"Key" : "stack", "Value" : "WebserversDev"}]
+            }
+        },
+
+        "AttachGateway" : {
+            "Type" : "AWS::EC2::VPCGatewayAttachment",
+            "Properties" : {
+               "VpcId" : { "Ref" : "EngineeringVPC" },
+               "InternetGatewayId" : { "Ref" : "myInternetGateway" }
+             }
+        },
+
+        "WebserversSG" : {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "Security group for WebServers stack",
+                "VpcId": {
+                    "Ref": "EngineeringVPC"
+                },
+                "SecurityGroupIngress": [
+                    {"IpProtocol" : "tcp", "FromPort" : "80", "ToPort" : "80", "CidrIp" : "0.0.0.0/0"},
+                    {"IpProtocol" : "tcp", "FromPort" : "22", "ToPort" : "22", "CidrIp" : { "Ref" : "YourIp"}}
+                ]
+            }
+        },
+
+        "PublicSubnet1": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "CidrBlock": "10.0.0.0/24",
+                "AvailabilityZone": "us-east-1a",
+                "MapPublicIpOnLaunch": "true",
+                "VpcId": { 
+                    "Ref": "EngineeringVPC" 
+                }
+            }
+        },
+        "PublicSubnet2": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "CidrBlock": "10.0.1.0/24",
+                "AvailabilityZone": "us-east-1b",
+                "MapPublicIpOnLaunch": true,
+                "VpcId": { 
+                    "Ref": "EngineeringVPC" 
+                }
+            }
+        },
+        "web1": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "ImageId": "ami-01cc34ab2709337aa",
+                "IamInstanceProfile": "LabInstanceProfile",
+                "SecurityGroupIds": [{
+                        "Ref": "WebserversSG"
+                    }
+                ],
+                "KeyName": {
+                    "Ref": "KeyPair"
+                },
+                "InstanceType": {
+                    "Ref": "InstanceTypeParameter"
+                },
+                "SubnetId": {
+                    "Ref": "PublicSubnet1"
+                },
+                "UserData": {
+                    "Fn::Base64": "#!/bin/bash\nyum update -y\nyum install -y git httpd php\nservice httpd start\nchkconfig httpd on\naws s3 cp s3://seis665-public/index.php /var/www/html/"
+                }
+            }
+        },
+        "web2": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "ImageId": "ami-01cc34ab2709337aa",
+                "IamInstanceProfile": "LabInstanceProfile",
+                "SecurityGroupIds": [{
+                        "Ref": "WebserversSG"
+                    }
+                ],
+                "KeyName": {
+                    "Ref": "KeyPair"
+                },
+                "InstanceType": {
+                    "Ref": "InstanceTypeParameter"
+                },
+                "SubnetId": {
+                    "Ref": "PublicSubnet2"
+                },
+                "UserData": {
+                    "Fn::Base64": "#!/bin/bash\nyum update -y\nyum install -y git httpd php\nservice httpd start\nchkconfig httpd on\naws s3 cp s3://seis665-public/index.php /var/www/html/"                   
+                }
+            }
+        },
+        "EngineeringLB": {
+            "Type": "AWS::ElasticLoadBalancing::LoadBalancer",
+            "Properties": {
+                "Instances": [
+                  {"Ref": "web1"},
+                  {"Ref": "web2"}
+                ],
+                "Subnets": [
+                  {"Ref": "PublicSubnet1"},
+                  {"Ref": "PublicSubnet2"}
+                ],
+                "Listeners": [
+                  {
+                    "LoadBalancerPort": "80",
+                    "InstancePort": "80",
+                    "Protocol": "HTTP"
+                  }
+                ],
+                "HealthCheck": {
+                  "Target": "HTTP:80/",
+                  "HealthyThreshold": "3",
+                  "UnhealthyThreshold": "5",
+                  "Interval": "30",
+                  "Timeout": "5"
+                },
+                "SecurityGroups": [
+                  {"Ref": "WebserversSG"}
+                ]
+            }
+        },
+        "EngineeringWebservers": {
+            "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+            "Properties": {
+                "HealthCheckEnabled": "true",
+                "VpcId": {
+                    "Ref": "EngineeringVPC"
+                },
+                "Protocol": "HTTP",
+                "Port": "80",
+                "Targets": [
+                    {
+                        "Id" : {"Ref": "web1"}
+                    },
+                    {
+                        "Id" : {"Ref": "web2"}
+                    }
+                ]
+            }
+        }          
+    },
+
+    "Outputs": {
+        "LoadBalancerDNSName": {
+            "Description": "The DNS name of the load balancer",
+            "Value": {"Fn::GetAtt": ["EngineeringLB", "DNSName"]}
+        }           
+    }
+}
