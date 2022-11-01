@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="AF655041-C96B-C434-A753-7F1EA700CAF2" containerWithKeyObject="6809740A-D53E-CA50-EDE6-10E545C96B0C" localFKIndex="E02C3FC9-FC06-2694-AB9A-84CF5410083C" name="INTERSEX_PATIENTS_PATIENT_FK">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:24:05 UTC</createdTime>
+<generatorID>24ACE4A4-E764-599C-6595-9BF73BB1CD8B</generatorID>
+<ownerDesignName>werd</ownerDesignName>
+<referredTableLongName>PATIENT</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DD767E17-9E53-7311-D6A8-1EBBE719F3F6</referredTableID>
+<keyObject>4334DC06-BC8E-7792-9215-C2E72CE03766</keyObject>
+<referredKeyID>4334DC06-BC8E-7792-9215-C2E72CE03766</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>PATIENT_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

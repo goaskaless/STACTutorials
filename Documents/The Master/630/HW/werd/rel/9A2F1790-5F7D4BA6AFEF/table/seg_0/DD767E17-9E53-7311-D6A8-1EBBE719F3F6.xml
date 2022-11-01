@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DD767E17-9E53-7311-D6A8-1EBBE719F3F6" name="PATIENT">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:24:05 UTC</createdTime>
+<generatorID>DC99923D-3404-DE04-E95D-A4D968A530F9</generatorID>
+<ownerDesignName>werd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PATIENT_ID" id="17792D28-9BF6-C250-6381-7E9D7B7680D2">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:24:05 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="DOB" id="EC694DBD-88B3-8F1A-39E8-25287566DABA">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:36:34 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Physician_Name" id="6BE3D56C-48FB-3CCF-37B2-642246590A95">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:36:34 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Gender_Assigned_At_Birth" id="D166A2C0-5500-021C-C822-DC9FAB77C4F7">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:36:34 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4334DC06-BC8E-7792-9215-C2E72CE03766" name="PATIENT_PK">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:24:05 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="17792D28-9BF6-C250-6381-7E9D7B7680D2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

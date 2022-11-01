@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_1" directorySegmentName="seg_0" id="8AC32CC7-37DC-1FB0-65B6-A553FBA03CE3">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:22:52 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<engineerTo>
+<item key="9A2F1790-F262-E2A3-6782-5F7D4BA6AFEF" value="true"/>
+</engineerTo>
+<dominantRole>DC99923D-3404-DE04-E95D-A4D968A530F9</dominantRole>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>DC99923D-3404-DE04-E95D-A4D968A530F9</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>1716BC12-7146-BCCC-5752-A90A6186C673</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="681A249C-BB76-0E92-3CDE-018B3247B18B" name="GENDER_CURRENTYEAR">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:24:05 UTC</createdTime>
+<generatorID>B3C6A508-A564-6FC8-1881-A6D521A0774E</generatorID>
+<ownerDesignName>werd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PATIENT_PATIENT_ID" id="5E8B058C-E3A6-01DC-98AB-FD3A965575E3">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:24:05 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FDEC4181-0130-D0CD-F636-4294AB9207CE" referredColumn="17792D28-9BF6-C250-6381-7E9D7B7680D2"/>
+</associations>
+</Column>
+<Column name="Gender_Current" id="B886E264-9D27-58B7-92EC-D9816820ECBC">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:40:40 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Prounoun_Current" id="BBBDDD79-C4F4-13F1-89CE-CF4E6474468D">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:40:40 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Patient_Age" id="D3B2BA6D-D7E0-6FD4-F08D-0F86AF3BD5B3">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:40:40 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3EA8781F-F959-25FA-9202-F883364FE9AA" name="GENDER_CURRENTYEAR__IDX">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:24:05 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>89BB7083-DB27-0033-93C3-57FD499F1E7B</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="5E8B058C-E3A6-01DC-98AB-FD3A965575E3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5C6E71B8-1D37-CC27-C596-EC3677C70BBD" name="GENDER_CURRENTYEAR_FK">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 21:18:41 UTC</createdTime>
+<generatorID>48FEB9AA-4103-6B85-430C-4EF07F663479</generatorID>
+<ownerDesignName>werd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5E8B058C-E3A6-01DC-98AB-FD3A965575E3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

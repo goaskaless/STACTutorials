@@ -1,0 +1,121 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2100E8A2-4B12-D782-F12A-113D49CEBF44" name="LAYERS_SEX">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:24:05 UTC</createdTime>
+<generatorID>1716BC12-7146-BCCC-5752-A90A6186C673</generatorID>
+<ownerDesignName>werd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PATIENT_PATIENT_ID" id="C11435A8-3EDC-956F-6191-A78F547B612B">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:24:05 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5EA968B5-0D7B-0D11-BFC7-4AFADC4C9D50" referredColumn="17792D28-9BF6-C250-6381-7E9D7B7680D2"/>
+</associations>
+</Column>
+<Column name="Layer1_Chromosomal" id="0F98A592-F42E-60E5-75AF-7FE98C8C230D">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:31:47 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Layer2_FetalGonadal" id="E8F4E06F-5FC4-C9A4-4A6A-CD6EF7677F90">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:33:52 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Layer3_FetalHormonal" id="13EEC0F7-E93B-53C2-96AA-FAD57C068AAD">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:33:52 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Layer4_Internal" id="C2C6A5E5-2EA6-E0FD-E7FD-C3CED12757C3">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:33:52 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Layer5_External" id="7D074DAA-BBA1-A93F-1557-DEEA08DE0098">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:33:52 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B7515899-C758-26BF-97AC-07322F19F907" name="LAYERS_SEX_PK">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 21:07:02 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C11435A8-3EDC-956F-6191-A78F547B612B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A87D9D17-9A1D-E5C2-1019-78F0241510F6" name="LAYERS_SEX__IDX">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:24:05 UTC</createdTime>
+<ownerDesignName>werd</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>8AC32CC7-37DC-1FB0-65B6-A553FBA03CE3</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="C11435A8-3EDC-956F-6191-A78F547B612B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3FA10F6B-1F2E-F2EC-D78E-DAD81124E66B" name="LAYERS_SEX_PATIENT_FK">
+<createdBy>clift</createdBy>
+<createdTime>2022-10-30 20:24:05 UTC</createdTime>
+<generatorID>8AC32CC7-37DC-1FB0-65B6-A553FBA03CE3</generatorID>
+<ownerDesignName>werd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C11435A8-3EDC-956F-6191-A78F547B612B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
